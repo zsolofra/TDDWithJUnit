@@ -1,31 +1,34 @@
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
 
 import org.junit.Test;
 
 public class CarTest {
 
-	// Ensures the default speed is zero
-	@Test public void createsCarWithSpeedOfZero() {
+	@Test 
+	public void createsCarWithSpeedOfZero() {
 		Car car1 = new Car("Red", 100);
-		assertEquals(0, car1.getSpeed());
+		assertThat(car1.getSpeed(), is(0));
 	}
 	
-	@Test public void accelerates(){
+	@Test 
+	public void canAccelerate(){
 		Car car1 = new Car("Red", 100);
 		car1.accelerate(10);
-		assertEquals(10, car1.getSpeed());
+		assertThat(car1.getSpeed(), is(10));
 	}
 	
-	@Test public void cannotAccelerateBeyondMaxSpeed(){
+	@Test
+	public void cannotAccelerateBeyondMaxSpeed(){
 		Car car1 = new Car("Red", 100);
 		car1.accelerate(101);
-		assertEquals(100, car1.getSpeed());
+		assertThat(car1.getSpeed(), is(100));
 	}
 	
-	// A simple "toString" method test.
-	@Test public void createsAString(){
+	@Test 
+	public void canDoToString(){
 		Car car1 = new Car("Red", 100);
-		assertEquals("Color: Red, Speed: 0", car1.toString());
+		assertThat(car1.toString(), is("Color: Red, Speed: 0"));
 	}
 
 	// Create and pass test for deceleration.

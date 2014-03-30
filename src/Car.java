@@ -4,12 +4,21 @@ public class Car {
 	private int speed;
 	private int maxSpeed;
 
+	
+	/**
+	 * Creates a new car instance
+	 * @param color
+	 * @param maxSpeed
+	 */
 	public Car(String color, int maxSpeed){
 		this.color = color;
 		this.maxSpeed = maxSpeed;
 		this.speed = 0;
 	}
 	
+	/**
+	 * Return the current speed of the car.
+	 */
 	public int getSpeed(){
 		return(this.speed);
 	};
@@ -34,8 +43,7 @@ public class Car {
 	 */
 	public String toString(){
 		// not implemented!
-		return "";
+		return("");
 	}
 
-	
 }

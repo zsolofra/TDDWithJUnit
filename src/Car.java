@@ -46,4 +46,14 @@ public class Car {
 		return("Color: " + this.color + ", Speed: " + this.speed);
 	}
 
+	public void decelerate(int amount) {
+		int limit = this.maxSpeed - this.speed;
+		if(amount >= limit){
+			this.speed -= amount;
+		}else{
+			this.speed = 0;
+		}
+		
+	}
+
 }
